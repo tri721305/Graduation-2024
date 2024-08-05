@@ -1,0 +1,15 @@
+.hotels-container {
+     .hotels-content {
+          background: var(--input-bg-primary-color);
+          width: 100%;
+
+          display: flex;
+          border-radius: 12px;
+          padding: 12px 16px;
+          .hotels-title {
+               font-size: 12px;
+               font-weight: 700;
+               color: var(--text-secondary-color);
+          }
+     }
+}

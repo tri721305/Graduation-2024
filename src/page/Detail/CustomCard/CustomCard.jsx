@@ -15,7 +15,9 @@ const CustomCard = ({ place, description, index, image }) => {
                          <Typography.Text>{description}</Typography.Text>
                     </div>
                </div>
-               <div className="card-right"></div>
+               <div className="card-right">
+                    <img src={image} alt="places" />
+               </div>
           </div>
      );
 };
