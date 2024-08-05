@@ -48,6 +48,9 @@ export const detailSlice = createSlice({
           setNotes: (state, action) => {
                state.data.notes = { ...state.data.notes, data: action.payload };
           },
+          setDate: (state, action) => {
+               state.data.plan = { ...state.data.plan, data: action.payload };
+          },
      },
      //  extraReducers: (builder) => {
      //       builder.addCase(getAllReportBuilder.fulfilled, (state, action) => {

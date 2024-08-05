@@ -93,3 +93,13 @@
      max-width: 200px;
      border-radius: 6px;
 }
+.graduation-checklists {
+     cursor: pointer;
+     :hover {
+     }
+     .graduation-trash {
+          opacity: 1;
+          transition: 1s ease;
+          color: rgba(255, 0, 0, 0.611);
+     }
+}

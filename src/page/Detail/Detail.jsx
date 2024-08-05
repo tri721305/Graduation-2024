@@ -17,30 +17,32 @@ import saigon from "../../assets/images/saigon.png";
 import { useDispatch, useSelector } from "react-redux";
 import { detailActions } from "./detailSlice";
 import avt from "../../assets/images/avt.png";
+import moment from "moment";
 
 const Detail = () => {
-     const [data, setData] = useState([
-          {
-               type: "note",
-               title: "Notes",
-               data: null,
-          },
-          {
-               type: "hotel",
-               title: "Hotels and Lodging",
-               data: null,
-          },
-          {
-               type: "restaurants",
-               title: "Restaurants",
-               data: null,
-          },
-          {
-               type: "places",
-               title: "Places to visit",
-               data: null,
-          },
-     ]);
+     const dispatch = useDispatch();
+     const { data } = useSelector((state) => state?.detail);
+     const getDaysBetween = (startDate, endDate) => {
+          const start = moment(startDate);
+          const end = moment(endDate);
+
+          const days = [];
+          while (start.isSameOrBefore(end, "day")) {
+               days.push(start.format("YYYY-MM-DD"));
+               start.add(1, "day");
+          }
+
+          return days;
+     };
+     const handleChooseDate = (date, dateString) => {
+          let days = getDaysBetween(dateString[0], dateString[1]);
+          let newFormat = days.map((item, index) => ({
+               date: item,
+               data: [],
+          }));
+          console.log("days", newFormat);
+          dispatch(detailActions.setDate(newFormat));
+     };
      return (
           <div className="detail-trip">
                <div className="detail-trip-leftmenu min-w-[50px]">
@@ -58,7 +60,10 @@ const Detail = () => {
                               </Typography.Text>
                               {/* ============================= Ngày đi, ngày về ============================== */}
                               <div className="flex items-center justify-between">
-                                   <DatePicker.RangePicker className="graduation-datepicker-range shadow-md" />
+                                   <DatePicker.RangePicker
+                                        onChange={handleChooseDate}
+                                        className="min-w-[280px] graduation-datepicker-range shadow-md"
+                                   />
                                    <div className="flex gap-2">
                                         <Avatar className="shadow-md" src={avt} size={40} alt="avataruser" />
                                         <Tooltip title="Invite tripmates">

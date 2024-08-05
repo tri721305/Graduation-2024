@@ -9,7 +9,7 @@ const Restaurants = () => {
      return (
           <div className="restaurants-container">
                <div className="flex gap-1 items-center mb-2">
-                    <Typography.Text strong>Restaurans</Typography.Text>
+                    <Typography.Text strong>Restaurants</Typography.Text>
                     <HiChevronRight />
                </div>
                <div className="flex gap-1">
