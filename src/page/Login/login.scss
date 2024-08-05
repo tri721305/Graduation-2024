@@ -1,0 +1,264 @@
+@import url("https://fonts.googleapis.com/css2?family=Prata&display=swap");
+
+* {
+     position: relative;
+     box-sizing: border-box;
+}
+
+.home-container {
+     display: grid;
+     // padding: 3vmin;
+     // overflow: hidden;
+     background: #e6ded7;
+}
+.iframely-embed {
+     position: fixed;
+     top: 0;
+     left: 0;
+     width: 100%;
+     height: 100%;
+     z-index: 50;
+     background: white;
+}
+.home {
+     display: grid;
+     grid-template-columns: 1fr 2fr;
+     align-items: center;
+     padding-bottom: 4vmin;
+     height: 90vh;
+     width: 100%;
+     background: #ede8e2;
+     color: #3a3535;
+     z-index: 100;
+     margin-top: 2vmin;
+     margin-left: 2vmin;
+     .home-btn {
+          font-size: 1.2rem;
+          padding: 1rem;
+          background: #78c57a;
+          border-radius: 12px;
+          color: #fff;
+          display: flex;
+          gap: 6px;
+          align-items: center;
+          width: fit-content;
+          &:hover {
+               background: #86be88;
+          }
+     }
+     &:hover {
+          //   opacity: 0.8;
+     }
+     .home-title {
+          padding-left: 1em;
+          grid-column: 1 / -1;
+          grid-row: 1;
+
+          font-family: "Prata", serif;
+          font-size: 6vw;
+          width: 100%;
+          z-index: 2;
+          .home-title-inner {
+               display: inline-block;
+          }
+     }
+}
+@keyframes text-clip {
+     from {
+          clip-path: polygon(0% 100%, 100% 100%, 100% 100%, 0% 100%);
+     }
+     to {
+          clip-path: polygon(0 0, 100% 0, 100% 100%, 0 100%);
+     }
+}
+@keyframes outer-left {
+     from {
+          transform: translateX(50%);
+     }
+     to {
+          transform: none;
+     }
+}
+
+@keyframes inner-left {
+     from {
+          transform: translateX(-50%);
+     }
+     to {
+          transform: none;
+     }
+}
+.home-cafe,
+.home-mozart {
+     animation: outer-left 1s 1s cubic-bezier(0.5, 0, 0.1, 1) both;
+}
+.home-title-inner {
+     display: inline-block;
+     animation: inner-left 1s 1s ease both;
+}
+.home-cafe-inner {
+     display: inline-block;
+     animation: inner-left 1s 1s ease both, text-clip 1s 0s cubic-bezier(0.5, 0, 0.1, 1) both;
+}
+.home-mozart-inner {
+     animation: text-clip 1s 0s cubic-bezier(0.5, 0, 0.1, 1) both;
+}
+.home-title {
+     animation: outer-left 1s 1s ease both;
+}
+.home-cafe {
+     // start
+     > .home-cafe-inner {
+          display: inline-block;
+     }
+}
+
+.home-mozart {
+     display: inline-block;
+}
+.home-image {
+     grid-row: 1;
+     grid-column: 2;
+     margin-left: -2rem;
+     opacity: 0.7;
+     animation: image-in 1s cubic-bezier(0.5, 0, 0.1, 1) 2s backwards;
+     height: 100vh;
+     width: 100%;
+     background: #a7c7e7;
+     display: flex;
+     justify-content: center;
+     align-items: center;
+     z-index: 10;
+     @keyframes image-in {
+          from {
+               clip-path: polygon(0 0, 100% 0, 100% 0, 0 0);
+          }
+          to {
+               clip-path: polygon(0 0, 100% 0, 100% 100%, 0 100%);
+          }
+     }
+
+     img {
+          display: block;
+          width: 100%;
+          height: auto;
+     }
+}
+
+// Replay animation!
+// body:active * {
+//      animation: none !important;
+// }
+.login-section .form-box {
+     // position: absolute;
+     // display: flex;
+     // justify-content: center;
+     // align-items: center;
+     // width: 100%;
+     // height: 100%;
+}
+.login-section .form-box.register {
+     transform: translateX(430px);
+     transition: transform 0.6s ease;
+     transition-delay: 0s;
+}
+.login-section.active .form-box.register {
+     transform: translateX(0px);
+     transition-delay: 0.7s;
+}
+
+.login-section .form-box.login {
+     transform: translateX(0px);
+     transition: transform 0.6s ease;
+     transition-delay: 0.7s;
+}
+.login-section.active .form-box.login {
+     transform: translateX(430px);
+     transition-delay: 0s;
+}
+
+.login-section .form-box h2 {
+     text-align: center;
+     font-size: 25px;
+}
+
+.form-box .input-box {
+     width: 340px;
+     height: 50px;
+     border-bottom: 2px solid#fcf8f1;
+     margin: 30px 0;
+     position: relative;
+}
+.input-box input {
+     width: 100%;
+     height: 100%;
+     background: transparent;
+     border: none;
+     outline: none;
+     font-size: 16px;
+     padding-right: 28px;
+}
+.input-box label {
+     position: absolute;
+     top: 50%;
+     left: 0;
+     transform: translateY(-50%);
+     font-size: 16px;
+     font-weight: 600px;
+     pointer-events: none;
+     transition: 0.5s ease;
+}
+.input-box .icon {
+     position: absolute;
+     top: 13px;
+     right: 0;
+     font-size: 19px;
+}
+.input-box input:focus ~ label,
+.input-box input:valid ~ label {
+     top: -5px;
+}
+.remember-password {
+     font-size: 14px;
+     font-weight: 500;
+     margin: -15px 0 15px;
+     display: flex;
+     justify-content: space-between;
+}
+.remember-password label input {
+     accent-color: #fff;
+     margin-right: 3px;
+}
+.remember-password a {
+     color: #fff;
+     text-decoration: none;
+}
+.remember-password a:hover {
+     text-decoration: underline;
+}
+.btn {
+     background: #fff;
+     width: 100%;
+     height: 45px;
+     outline: none;
+     border: none;
+     border-radius: 4px;
+     cursor: pointer;
+     background: #56bab9;
+     font-size: 16px;
+     color: #fff;
+     box-shadow: rgba(0, 0, 0, 0.4);
+}
+.create-account {
+     font-size: 14.5px;
+     text-align: center;
+     margin: 25px;
+}
+.create-account p a {
+     color: #fff;
+     font-weight: 600px;
+     text-decoration: none;
+}
+.create-account p a:hover {
+     text-decoration: underline;
+}

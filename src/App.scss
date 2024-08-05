@@ -1,0 +1,66 @@
+:root {
+     --text-primary-color: #212529;
+     --text-secondary-color: #6c757d;
+     --background-secondary-color: #e9ecef;
+}
+
+.App {
+     height: 100vh;
+     width: 100vw;
+     .graduation-modal-container {
+     }
+}
+.ant-modal-content {
+     border-radius: 12px !important;
+}
+.graduation-space {
+     flex-basis: 0;
+     flex-grow: 1;
+     max-width: 100%;
+}
+.graduation-space-text {
+     color: var(--text-secondary-color);
+     font-size: 0.875rem;
+     font-weight: 700;
+     flex: 0 0 auto;
+     max-width: 100%;
+     width: auto;
+     margin: 6px 12px;
+}
+.graduation-title {
+     color: var(--text-primary-color);
+     font-size: 1.5rem;
+     line-height: 1.2;
+     // letter-spacing: 0.03em;
+     font-weight: 700;
+}
+.graduation-btn {
+     padding: 24px;
+     display: flex;
+     align-items: center;
+     justify-content: center;
+     width: 100%;
+     background: var(--background-secondary-color);
+     border: 1px solid var(--background-secondary-color);
+     border-radius: 100px;
+     min-width: 60px;
+     height: 56px;
+     color: var(--text-primary-color);
+     font-weight: 700;
+     font-size: 1rem;
+     gap: 12px;
+}
+
+.graduation-input {
+     background: var(--background-secondary-color);
+     border: 1px solid var(--background-secondary-color);
+     border-radius: 6px;
+     height: 56px;
+     color: var(--text-primary-color);
+     font-size: 1rem;
+     font-weight: 400;
+     line-height: 1.5;
+     .ant-input {
+          background: var(--background-secondary-color);
+     }
+}

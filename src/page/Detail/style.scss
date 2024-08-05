@@ -1,0 +1,85 @@
+.sub-content-container {
+     background-color: #fff;
+     border-radius: 8px;
+     bottom: -8px;
+     box-shadow: 0 2px 12px rgba(0, 0, 0, 0.2);
+     left: 32px;
+     margin-left: auto;
+     margin-right: auto;
+     min-height: 160px;
+     margin-bottom: 12px;
+     padding: 16px 16px 16px 24px;
+     position: absolute;
+     right: 32px;
+     max-width: 560px;
+}
+.detail-trip {
+     display: flex;
+     .detail-trip-leftmenu {
+     }
+     .detail-trip-rightmenu {
+          .background-image-container {
+               min-height: 240px;
+               top: 0;
+               width: 100%;
+               position: absolute;
+               max-height: 250px;
+               overflow: hidden;
+          }
+     }
+     .summarize-container {
+          margin: auto 40px;
+          display: flex;
+          flex-direction: column;
+          gap: 12px;
+          .summarize-info {
+               // padding: 0px 36px;
+               display: flex;
+               // justify-content: space-between;
+               gap: 12px;
+               .summarize-info-left {
+                    padding: 14px;
+                    flex: 1;
+                    border-radius: 16px;
+                    .convenience-lists {
+                         display: flex;
+                         // gap: 4px;
+                         justify-content: space-between;
+                         align-items: center;
+                         .convenience-items {
+                              display: flex;
+                              flex-direction: column;
+                              align-items: center;
+                              cursor: pointer;
+                              height: 48px;
+                              min-width: 100px;
+                              // width: 56px;
+                              padding: 0px 12px;
+                              border-right: 0.5px solid #e7e7e7;
+                         }
+                    }
+               }
+               .summarize-info-right {
+                    background: #f3f4f5;
+                    padding: 14px;
+                    border-radius: 16px;
+               }
+          }
+     }
+     .custom-input {
+          border: none;
+          background: #f3f4f5;
+          .ant-input {
+               border: none;
+               background: #f3f4f5;
+          }
+     }
+     .btn-icon {
+          background: #f3f4f5;
+          border: none;
+          border-radius: 50%;
+          width: 40px;
+          height: 40px;
+          text-align: center;
+     }
+}

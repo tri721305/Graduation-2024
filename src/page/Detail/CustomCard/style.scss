@@ -1,0 +1,33 @@
+.custom-card-container {
+     position: relative;
+     display: flex;
+     width: 100%;
+     gap: 12px;
+     .custom-marker {
+          position: absolute;
+          left: -15px;
+          .custom-marker-index {
+               position: absolute;
+               left: 12px;
+               top: 0px;
+               z-index: 100;
+               color: #fff;
+               font-weight: bold;
+          }
+     }
+     .card-left {
+          min-width: 80px;
+          background: #f3f4f5;
+          border-radius: 12px;
+          min-height: 120px;
+          padding: 12px 16px;
+          flex: 1;
+     }
+     .card-right {
+          background: #f3f4f5;
+          border-radius: 12px;
+          width: 200px;
+          height: 120px;
+          cursor: pointer;
+     }
+}

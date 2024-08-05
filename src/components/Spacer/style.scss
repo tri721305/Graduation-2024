@@ -1,0 +1,16 @@
+.spacer-container {
+     height: 32px;
+     display: flex;
+     align-items: center;
+     margin: 16px 0px;
+     .spacer-divider {
+          align-items: stretch;
+          display: flex;
+          flex-direction: column;
+          flex-grow: 1;
+          justify-content: center;
+          height: 1px;
+          width: 100%;
+          background: #dee2e6;
+     }
+}

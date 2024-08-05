@@ -1,0 +1,113 @@
+:root {
+     --body-color: #e4e9f7;
+     --sidebar-color: #fff;
+     --primary-color-sidebar: #695cfe;
+     --primary-color-sidebar-light: #f6f5ff;
+     --toggle-color: #ddd;
+     --text-color: #707070;
+
+     --tran-02: all 0.2s ease;
+     --tran-03: all 0.3s ease;
+     --tran-04: all 0.4s ease;
+     --tran-05: all 0.5s ease;
+}
+.sidebar {
+     height: 100%;
+     width: 250px;
+     background: var(--sidebar-color);
+     padding: 10px 14px;
+     position: relative;
+     // overflow: hidden;
+     transition: var(--tran-05);
+     &.close {
+          width: 88px;
+          .text {
+               opacity: 0;
+          }
+     }
+     .btn-toggle {
+     }
+     .sidebar-menu-bar {
+          display: flex;
+          flex-direction: column;
+          justify-content: space-between !important;
+          height: calc(100% - 50px);
+     }
+
+     .menu-links {
+          .nav-links {
+               :hover {
+                    background: var(--primary-color-sidebar);
+                    .icon,
+                    .text {
+                         color: var(--primary-color-sidebar-light);
+                         transition: var(--tran-03);
+                    }
+               }
+          }
+     }
+     .search-box {
+          background: var(--primary-color-sidebar-light);
+          input {
+               background: var(--primary-color-sidebar-light) !important;
+               outline: none !important;
+               border: none !important;
+          }
+     }
+     li {
+          height: 50px;
+          margin-top: 10px;
+          list-style: none;
+          display: flex;
+          align-items: center;
+          .icon {
+               font-size: 20px !important;
+               min-width: 60px;
+               display: flex;
+               justify-content: center;
+               align-items: center;
+          }
+          .text {
+               color: var(--text-color);
+          }
+          a {
+               text-decoration: none;
+               display: flex;
+               height: 100%;
+               align-items: center;
+               border-radius: 6px;
+               transition: var(--tran-04);
+               width: 100%;
+          }
+     }
+     .text {
+          font-size: 16px;
+          font-weight: 500;
+     }
+     image {
+          min-width: 60px;
+          display: flex;
+          align-items: center;
+     }
+     .image-text {
+          img {
+               width: 40px;
+               border-radius: 6px;
+          }
+          display: flex;
+          align-items: center;
+          gap: 12px;
+          .sidebar-image {
+          }
+          .header-text {
+               display: flex;
+               flex-direction: column;
+               .name {
+                    font-weight: 600;
+               }
+               .profession {
+                    margin-top: -2px;
+               }
+          }
+     }
+}
