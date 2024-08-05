@@ -124,7 +124,7 @@ const Detail = () => {
                          <Restaurants />
                     </div>
                </div>
-               {/* <div className="detail-map flex-1">
+               <div className="detail-map flex-1">
                     <Map
                          mapboxAccessToken="pk.eyJ1IjoibWluaHRyaTEyMDUiLCJhIjoiY2x5eWx4aHl1MWd0djJpc2I0aGJjc3RzMyJ9.QP5T8rdt-UijImXQZweQWg"
                          initialViewState={{
@@ -134,7 +134,7 @@ const Detail = () => {
                          }}
                          mapStyle="mapbox://styles/mapbox/streets-v9"
                     />
-               </div> */}
+               </div>
           </div>
      );
 };
