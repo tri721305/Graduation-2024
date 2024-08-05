@@ -128,8 +128,8 @@ const Detail = () => {
                     <Map
                          mapboxAccessToken="pk.eyJ1IjoibWluaHRyaTEyMDUiLCJhIjoiY2x5eWx4aHl1MWd0djJpc2I0aGJjc3RzMyJ9.QP5T8rdt-UijImXQZweQWg"
                          initialViewState={{
-                              longitude: -122.4,
-                              latitude: 37.8,
+                              longitude: 106.6926148,
+                              latitude: 10.7708772,
                               zoom: 14,
                          }}
                          mapStyle="mapbox://styles/mapbox/streets-v9"
