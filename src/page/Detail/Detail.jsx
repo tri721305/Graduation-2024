@@ -1,10 +1,10 @@
 import React, { useState } from "react";
-import { Typography, DatePicker, Button } from "antd";
+import { Typography, DatePicker, Button, Avatar, Tooltip } from "antd";
 import { CiSearch } from "react-icons/ci";
 import Map from "react-map-gl";
 import { IoAirplane } from "react-icons/io5";
 import { MdLocalHotel } from "react-icons/md";
-import { FaCarAlt } from "react-icons/fa";
+import { FaCarAlt, FaUserPlus } from "react-icons/fa";
 import { IoMdAttach } from "react-icons/io";
 import { BsThreeDots } from "react-icons/bs";
 import "./style.scss";
@@ -16,6 +16,8 @@ import MiniSidebar from "./MiniSidebar/MiniSidebar";
 import saigon from "../../assets/images/saigon.png";
 import { useDispatch, useSelector } from "react-redux";
 import { detailActions } from "./detailSlice";
+import avt from "../../assets/images/avt.png";
+
 const Detail = () => {
      const [data, setData] = useState([
           {
@@ -39,7 +41,6 @@ const Detail = () => {
                data: null,
           },
      ]);
-     console.log("data", data);
      return (
           <div className="detail-trip">
                <div className="detail-trip-leftmenu min-w-[50px]">
@@ -51,10 +52,20 @@ const Detail = () => {
                               <img alt="image" src={saigon} />
                               <Button>Edit</Button>
                          </div>
-                         <div className="sub-content-container ">
-                              <Typography.Text>Thành phố Hồ Chí Minh</Typography.Text>
+                         <div className="sub-content-container">
+                              <Typography.Text strong className="text-[24px]">
+                                   Thành phố Hồ Chí Minh
+                              </Typography.Text>
                               {/* ============================= Ngày đi, ngày về ============================== */}
-                              <DatePicker />
+                              <div className="flex items-center justify-between">
+                                   <DatePicker.RangePicker className="graduation-datepicker-range shadow-md" />
+                                   <div className="flex gap-2">
+                                        <Avatar className="shadow-md" src={avt} size={40} alt="avataruser" />
+                                        <Tooltip title="Invite tripmates">
+                                             <Button className="btn-icon shadow-md" icon={<FaUserPlus />} />
+                                        </Tooltip>
+                                   </div>
+                              </div>
                          </div>
                     </div>
                     <div className="pb-5 mb-3 bg-[#f3f4f5]">
@@ -92,11 +103,13 @@ const Detail = () => {
                                         </div>
                                    </div>
                               </div>
-                              <div className="summarize-info-right">
+                              <div className="summarize-info-right flex flex-col justify-around ">
                                    <Typography.Text strong>Budgeting</Typography.Text>
                                    <div className="flex flex-col">
                                         <Typography.Text>$0.00</Typography.Text>
-                                        <Typography.Text strong> View details</Typography.Text>
+                                        <Typography.Text strong className="cursor-pointer">
+                                             View details
+                                        </Typography.Text>
                                    </div>
                               </div>
                          </div>

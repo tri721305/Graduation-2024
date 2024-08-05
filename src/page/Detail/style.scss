@@ -12,6 +12,9 @@
      position: absolute;
      right: 32px;
      max-width: 560px;
+     display: flex;
+     flex-direction: column;
+     justify-content: space-around;
 }
 .detail-trip {
      display: flex;
@@ -81,5 +84,12 @@
           width: 40px;
           height: 40px;
           text-align: center;
+          display: flex;
+          justify-content: center;
+          align-items: center;
      }
+}
+.graduation-datepicker-range {
+     max-width: 200px;
+     border-radius: 6px;
 }

@@ -1,5 +1,5 @@
 import React from "react";
-import { Input, Typography, Button } from "antd";
+import { Input, Typography, Button, Tooltip } from "antd";
 import Spacer from "../../../components/Spacer/Spacer";
 import { HiChevronRight } from "react-icons/hi";
 import { FaMapMarkerAlt } from "react-icons/fa";
@@ -19,12 +19,16 @@ const Restaurants = () => {
                          prefix={<FaMapMarkerAlt />}
                          size="large"
                     />
-                    <Button className="btn-icon">
-                         <CiStickyNote />
-                    </Button>
-                    <Button className="btn-icon">
-                         <GiChecklist />
-                    </Button>
+                    <Tooltip key="add note " title="Add note">
+                         <Button className="btn-icon">
+                              <CiStickyNote />
+                         </Button>
+                    </Tooltip>
+                    <Tooltip key="add list" title="Add checklist">
+                         <Button content="hello" className="btn-icon">
+                              <GiChecklist />
+                         </Button>
+                    </Tooltip>
                </div>
                <Spacer />
           </div>
