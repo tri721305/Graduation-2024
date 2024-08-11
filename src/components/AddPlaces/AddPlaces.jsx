@@ -22,13 +22,34 @@ const AddPlaces = ({ isShow, setIsShow }) => {
                          setData(e.target.value);
                     }}
                />
-               <div className="">
-                    <Typography.Text>PROVINCE</Typography.Text>
-                    <Select className="custom-select rounded-lg"></Select>
+               <div className="flex flex-col">
+                    <Typography.Text className="custom-input-title">TYPE</Typography.Text>
+                    <Select showSearch className="custom-select rounded-lg"></Select>
                </div>
-               <CustomInput title="DISTRICT" />
-               <CustomInput title="WARD" />
-               <CustomInput title="TYPE" />
+               <div className="flex flex-col">
+                    <Typography.Text className="custom-input-title">DESCRIPTION</Typography.Text>
+                    <Select showSearch className="custom-select rounded-lg"></Select>
+               </div>
+               <div className="flex flex-col">
+                    <Typography.Text className="custom-input-title">ADDRESS</Typography.Text>
+                    <Select showSearch className="custom-select rounded-lg"></Select>
+               </div>
+               <div className="flex flex-col">
+                    <Typography.Text className="custom-input-title">PROVINCE</Typography.Text>
+                    <Select showSearch className="custom-select rounded-lg"></Select>
+               </div>
+               <div className="flex flex-col">
+                    <Typography.Text className="custom-input-title">DISTRICT</Typography.Text>
+                    <Select showSearch className="custom-select rounded-lg"></Select>
+               </div>
+               <div className="flex flex-col">
+                    <Typography.Text className="custom-input-title">WARD</Typography.Text>
+                    <Select showSearch className="custom-select rounded-lg"></Select>
+               </div>
+               <div className="flex justify-between gap-2">
+                    <CustomInput title="Longitude" />
+                    <CustomInput title="Latitude" />
+               </div>
           </Modal>
      );
 };
