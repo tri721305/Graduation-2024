@@ -17,11 +17,13 @@ import saigon from "../../assets/images/saigon.png";
 import { useDispatch, useSelector } from "react-redux";
 import { detailActions } from "./detailSlice";
 import avt from "../../assets/images/avt.png";
+import AddPlaces from "../../components/AddPlaces/AddPlaces";
 import moment from "moment";
 
 const Detail = () => {
      const dispatch = useDispatch();
      const { data } = useSelector((state) => state?.detail);
+     const [showAddPlaces, setShowAddPlaces] = useState(false);
      const getDaysBetween = (startDate, endDate) => {
           const start = moment(startDate);
           const end = moment(endDate);
@@ -76,8 +78,14 @@ const Detail = () => {
                     <div className="pb-5 mb-3 bg-[#f3f4f5]">
                          <div className="flex justify-around">
                               <Typography.Text string> Explore</Typography.Text>
-                              <Button type="primary" className="rounded-[16px] flex gap-2 items-center">
-                                   <CiSearch /> Browse all
+                              <Button
+                                   onClick={() => {
+                                        setShowAddPlaces(true);
+                                   }}
+                                   type="primary"
+                                   className="rounded-[16px] flex gap-2 items-center"
+                              >
+                                   <CiSearch /> Add place
                               </Button>
                          </div>
                     </div>
@@ -123,6 +131,7 @@ const Detail = () => {
                          <Places />
                          <Restaurants />
                     </div>
+                    {showAddPlaces ? <AddPlaces isShow={showAddPlaces} setIsShow={setShowAddPlaces} /> : null}
                </div>
                <div className="detail-map flex-1">
                     <Map
