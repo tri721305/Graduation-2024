@@ -1,0 +1,48 @@
+.graduation__home {
+     h1,
+     h2,
+     h3 {
+          color: var(--title-color);
+          font-weight: var(--font-semi-bold);
+          font-family: var(--title-font);
+     }
+     .home {
+     }
+     .home__container {
+          position: relative;
+          height: calc(100vh - var(--header-height));
+          align-content: center;
+          row-gap: 3rem;
+          .home__data {
+               .home__data-subtitle,
+               .home__data-title,
+               .home__social-link,
+               .home__info {
+                    // color: var(--white-color);
+                    // color: var(--title-color);
+               }
+               .home__data-subtitle {
+                    display: block;
+                    font-weight: var(--font-semi-bold);
+                    margin-bottom: var(--mb-0-75);
+               }
+               .home__data-title {
+                    font-size: var(--biggest-font-size);
+                    font-weight: var(--font-medium);
+                    margin-bottom: var(--mb-2-5);
+               }
+          }
+     }
+     .home__social {
+          display: flex;
+          flex-direction: column;
+          row-gap: 1.5rem;
+     }
+}
+@media screen and (max-width: 767px) {
+     .graduation__home {
+          .home__container {
+               align-content: start !important;
+          }
+     }
+}
