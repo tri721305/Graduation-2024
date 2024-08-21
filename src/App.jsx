@@ -13,6 +13,14 @@ import Detail from "./page/Detail/Detail";
 import Home from "./page/Home/Home";
 import Navbar from "./components/Navbar/Navbar";
 const App = () => {
+     const scrollHeader = () => {
+          const header = document.getElementById("nav__graduation");
+          console.log("header", header);
+          // When the scroll is greater than 100 viewport height, add the scroll-header class to the header tag
+          if (window.scrollY >= 100) header.classList.add("scroll-header");
+          else header.classList.remove("scroll-header");
+     };
+     window.addEventListener("scroll", scrollHeader);
      return (
           <div id="app" className="App">
                <ToastContainer enableMultiContainer position={toast.POSITION.TOP_RIGHT} style={{ zIndex: 100000 }} />

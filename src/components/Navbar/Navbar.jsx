@@ -7,7 +7,7 @@ const Navbar = () => {
           //   const navMenu = document.getElementById("nav-menu");
      }, []);
      return (
-          <nav className="nav__graduation nav__container">
+          <nav className="nav__graduation nav__container" id="nav__graduation">
                <a href="#" className="nav__logo">
                     Travel
                </a>

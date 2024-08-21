@@ -6,6 +6,10 @@
           font-weight: var(--font-semi-bold);
           font-family: var(--title-font);
      }
+     .graduation__grid {
+          display: grid;
+          gap: 1.5rem;
+     }
      .home {
      }
      .home__container {
@@ -18,7 +22,7 @@
                .home__data-title,
                .home__social-link,
                .home__info {
-                    // color: var(--white-color);
+                    color: var(--white-color);
                     // color: var(--title-color);
                }
                .home__data-subtitle {
@@ -37,12 +41,141 @@
           display: flex;
           flex-direction: column;
           row-gap: 1.5rem;
+          color: var(--white-color);
+          font-size: 1.2rem;
+          width: max-content;
+     }
+     .home__img {
+          position: absolute;
+          top: 0;
+          left: 0;
+          width: 100%;
+          height: 100vh;
+          object-fit: cover;
+          object-position: 83%;
+     }
+     .home__info {
+          background: var(--first-color);
+          display: flex;
+          padding: 1.5rem 1rem;
+          color: var(--white-color);
+          align-items: center;
+          column-gap: 0.5rem;
+          position: absolute;
+          bottom: 1rem;
+          right: 0;
+          width: 500px;
+          &-title {
+               display: block;
+               font-size: var(--small-font-size);
+               font-weight: var(--font-semi-bold);
+               margin-bottom: var(--mb-0-75);
+          }
+          &-button {
+               font-size: var(--smaller-font-size);
+          }
+          &-overlay {
+               overflow: var(--img-hidden);
+          }
+          &-img {
+               width: 400px;
+               transition: var(--img-transition);
+               cursor: pointer;
+               &:hover {
+                    transform: var(--img-scale);
+               }
+          }
+     }
+     .home__button {
+          display: inline-block;
+          background: var(--first-color);
+          color: var(--white-color);
+          padding: 1rem 2rem;
+          font-weight: var(--font-semi-bold);
+          transition: 0.3s;
+          &:hover {
+               background-color: var(--first-color-alt);
+          }
+     }
+     .section {
+          padding: 4.5rem 0 2.5rem;
+     }
+     .section__title {
+          font-size: var(--h2-font-size);
+          color: var(--title-color);
+          text-align: center;
+          text-transform: capitalize;
+          margin-bottom: var(--mb-2);
+     }
+     // ================================= ABOUT =============================
+     .about {
+          .about__container {
+               position: relative;
+               height: calc(100vh - var(--header-height));
+
+               row-gap: 2.5rem;
+          }
+
+          .about__data {
+               text-align: center;
+          }
+
+          .about__description {
+               margin-bottom: var(--mb-2);
+          }
+          .about__img {
+               display: flex;
+               column-gap: 1rem;
+               align-items: center;
+               justify-content: center;
+               &-one {
+                    width: 200px;
+               }
+               &-two {
+                    width: 300px;
+               }
+               &-one,
+               &-two {
+                    transition: var(--img-transition);
+                    &:hover {
+                         transform: var(--img-scale);
+                    }
+               }
+          }
+     }
+     .discover {
+          .discover__title,
+          .discover__description {
+               color: var(--white-color);
+          }
+
+          .discover__title {
+               font-size: var(--h3-font-size);
+               margin-bottom: var(--mb-0-25);
+          }
+          .discover__card {
+               position: relative;
+               width: 300px;
+               overflow: var(--img-hidden);
+               .discover__data {
+                    position: absolute;
+                    bottom: 1.5rem;
+                    left: 1rem;
+               }
+               .discover__img {
+                    transition: var(--img-transition);
+                    cursor: pointer;
+                    &:hover {
+                         transform: var(--img-scale);
+                    }
+               }
+          }
      }
 }
 @media screen and (max-width: 767px) {
      .graduation__home {
           .home__container {
-               align-content: start !important;
+               // align-content: start !important;
           }
      }
 }

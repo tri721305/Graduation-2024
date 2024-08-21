@@ -4,11 +4,22 @@
      top: 0;
      left: 0;
      z-index: var(--z-fixed);
-     background-color: var(--first-color);
+     // background-color: var(--first-color);
+     background: transparent;
      height: var(--header-height);
      display: flex;
      justify-content: space-between;
      align-items: center;
+     padding: 0 12px;
+     &.scroll-header {
+          // background: var(--body-color);
+          background: var(--white-color);
+          box-shadow: 0 0 4px hsla(var(--hue-color), 64%, 15%, 0.15);
+          .nav__logo,
+          .nav__toggle {
+               color: var(--title-color);
+          }
+     }
      .show-menu {
           right: 0 !important;
      }
