@@ -3,7 +3,6 @@ import react from "@vitejs/plugin-react";
 import path from "path";
 import fs from "fs/promises";
 import dotenv from "dotenv";
-
 export default ({ mode }) => {
   // Load app-level env vars to node-level env vars.
   // process.env = { ...process.env, ...loadEnv(mode, process.cwd()) };
@@ -19,6 +18,16 @@ export default ({ mode }) => {
         { find: "page", replacement: path.resolve(__dirname, "./src/page") },
       ],
     },
+    // css: {
+    //   preprocessorOptions: {
+    //     less: {
+    //       modifyVars: {
+    //         "primary-color": "#f3941e",
+    //       },
+    //       javascriptEnabled: true,
+    //     },
+    //   },
+    // },
     optimizeDeps: {
       esbuildOptions: {
         plugins: [

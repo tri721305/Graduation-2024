@@ -21,7 +21,7 @@ import "swiper/css";
 import "swiper/css/effect-coverflow";
 import "swiper/css/pagination";
 import { EffectCoverflow, Pagination } from "swiper/modules";
-
+import SearchBar from "../../components/Custom/SearchBar";
 const Home = () => {
      const [isPlay, setIsPlay] = useState(false);
      const triggerVideo = () => {
@@ -69,6 +69,7 @@ const Home = () => {
                     </div>
                     {/* <div className="home__container">abc</div> */}
                </section>
+               <SearchBar />
                {/* ================================= ABOUT =============================== */}
                <section className="about section" id="about">
                     <div

@@ -6,12 +6,14 @@ import { ToastContainer, toast } from "react-toastify";
 import "moment/locale/vi";
 import "react-toastify/dist/ReactToastify.css";
 import "antd/dist/antd.css";
+// import "antd/dist/antd.less";
 import "./App.scss";
 import "./index.css";
 import Header from "./components/Header/Header";
 import Detail from "./page/Detail/Detail";
 import Home from "./page/Home/Home";
 import Navbar from "./components/Navbar/Navbar";
+import SearchBar from "./components/Custom/SearchBar";
 const App = () => {
      const scrollHeader = () => {
           const header = document.getElementById("nav__graduation");

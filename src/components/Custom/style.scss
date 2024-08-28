@@ -1,0 +1,36 @@
+.search-bar-custom {
+     align-items: flex-end;
+     .custom-input {
+          border-radius: 6px;
+     }
+     .custom-hotel-number {
+          display: flex;
+          gap: 6px;
+          min-height: 40px;
+          align-items: center;
+          justify-content: center;
+          border: 1px solid #d9d9d9;
+          border-radius: 6px;
+          cursor: pointer;
+          font-family: "Courier New", Courier, monospace;
+     }
+}
+.custom-btn-orange {
+     background: #f3941e;
+     border-color: #f3941e;
+     display: flex;
+     justify-content: center;
+     align-items: center;
+     gap: 6px;
+     min-height: 40px;
+     border-radius: 6px;
+     color: var(--white-color);
+     font-weight: 600;
+     &:hover,
+     :active,
+     :focus {
+          background: #f18d13;
+          border-color: #f3941e;
+          color: var(--white-color);
+     }
+}
