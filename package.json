@@ -13,7 +13,10 @@
   "dependencies": {
     "@ant-design/icons": "^4.7.0",
     "@ant-design/plots": "^1.2.5",
+    "@hookform/devtools": "^4.3.1",
+    "@hookform/resolvers": "^3.9.0",
     "@reduxjs/toolkit": "^1.8.5",
+    "@tanstack/react-query": "^5.56.2",
     "@types/mapbox-gl": "^3.4.0",
     "antd": "^4.23.2",
     "antd-input-tag": "^1.0.14",
@@ -31,6 +34,8 @@
     "react-dnd": "^16.0.1",
     "react-dnd-html5-backend": "^16.0.1",
     "react-dom": "^18.2.0",
+    "react-hook-form": "^7.53.0",
+    "react-hook-form-antd": "^1.1.2",
     "react-icons": "^4.11.0",
     "react-map-gl": "^7.1.7",
     "react-redux": "^8.0.4",
@@ -46,7 +51,8 @@
     "toast": "^0.5.4",
     "universal-cookie": "^4.0.4",
     "vite-plugin-env-compatible": "^1.1.1",
-    "ws": "^8.14.2"
+    "ws": "^8.14.2",
+    "yup": "^1.4.0"
   },
   "devDependencies": {
     "@babel/plugin-transform-react-jsx": "^7.19.0",

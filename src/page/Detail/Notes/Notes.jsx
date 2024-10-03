@@ -4,10 +4,10 @@ import { Input, Typography } from "antd";
 import { HiChevronRight } from "react-icons/hi";
 import { useDispatch, useSelector } from "react-redux";
 import { detailActions } from "../detailSlice";
-const Notes = () => {
+const Notes = (props) => {
      const dispatch = useDispatch();
      return (
-          <div className="notes-container">
+          <div className="notes-container" ref={props?.ref}>
                <div className="flex gap-1 items-center mb-2">
                     <Typography.Text strong>Notes</Typography.Text>
                     <HiChevronRight />

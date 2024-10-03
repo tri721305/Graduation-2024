@@ -10,7 +10,7 @@
      display: flex;
      justify-content: space-between;
      align-items: center;
-     padding: 0 12px;
+     padding: 2rem 1.5rem;
      &.scroll-header {
           // background: var(--body-color);
           background: var(--white-color);
@@ -39,11 +39,14 @@
      }
      .nav__list {
           display: flex;
-          flex-direction: column;
+          flex-direction: row;
           row-gap: 2.5rem;
+          gap: 2.5rem;
+          color: #fff;
      }
      .nav__link {
-          color: var(--text-color-light);
+          // color: var(--text-color-light);
+          color: #fff;
           font-weight: var(--font-semi-bold);
           text-transform: uppercase;
           &:hover {
@@ -55,6 +58,7 @@
           top: 0.75rem;
           right: 1rem;
           font-size: 1.5rem;
+          opacity: 0;
      }
 }
 

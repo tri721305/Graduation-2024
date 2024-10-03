@@ -1,2 +1,3 @@
-import Login from "./Login/login.jsx";
+import Login from "./Login/login";
+
 export { Login };

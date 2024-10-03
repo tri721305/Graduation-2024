@@ -45,6 +45,7 @@ const Detail = () => {
           console.log("days", newFormat);
           dispatch(detailActions.setDate(newFormat));
      };
+     console.log("days", data);
      return (
           <div className="detail-trip">
                <div className="detail-trip-leftmenu min-w-[50px]">
@@ -89,49 +90,51 @@ const Detail = () => {
                               </Button>
                          </div>
                     </div>
-                    <div className="bg-[#fff] summarize-container">
-                         <div className="summarize-info">
-                              <div className="summarize-info-left bg-[#f3f4f5]">
-                                   <Typography.Text strong>Reservations and attachments</Typography.Text>
-                                   <div className="convenience-lists mt-[8px]">
-                                        <div className="convenience-items flex flex-col">
-                                             <IoAirplane size={18} />
-                                             <Typography.Text className="text-[12px]">Flights</Typography.Text>
+                    <div className="">
+                         <div className="bg-[#fff] summarize-container">
+                              <div className="summarize-info">
+                                   <div className="summarize-info-left bg-[#f3f4f5]">
+                                        <Typography.Text strong>Reservations and attachments</Typography.Text>
+                                        <div className="convenience-lists mt-[8px]">
+                                             <div className="convenience-items flex flex-col">
+                                                  <IoAirplane size={18} />
+                                                  <Typography.Text className="text-[12px]">Flights</Typography.Text>
+                                             </div>
+                                             <div className="convenience-items flex flex-col">
+                                                  <MdLocalHotel size={18} />
+                                                  <Typography.Text className="text-[12px]">Lodgings</Typography.Text>
+                                             </div>
+                                             <div className="convenience-items flex flex-col">
+                                                  <FaCarAlt size={18} />
+                                                  <Typography.Text className="text-[12px]">Rental cars</Typography.Text>
+                                             </div>{" "}
+                                             <div className="convenience-items flex flex-col">
+                                                  <IoMdAttach size={18} />
+                                                  <Typography.Text className="text-[12px]">Attachment</Typography.Text>
+                                             </div>
+                                             <div className="convenience-items flex flex-col border-none">
+                                                  <BsThreeDots size={18} />
+                                                  <Typography.Text className="text-[12px]">Other</Typography.Text>
+                                             </div>
                                         </div>
-                                        <div className="convenience-items flex flex-col">
-                                             <MdLocalHotel size={18} />
-                                             <Typography.Text className="text-[12px]">Lodgings</Typography.Text>
-                                        </div>
-                                        <div className="convenience-items flex flex-col">
-                                             <FaCarAlt size={18} />
-                                             <Typography.Text className="text-[12px]">Rental cars</Typography.Text>
-                                        </div>{" "}
-                                        <div className="convenience-items flex flex-col">
-                                             <IoMdAttach size={18} />
-                                             <Typography.Text className="text-[12px]">Attachment</Typography.Text>
-                                        </div>
-                                        <div className="convenience-items flex flex-col border-none">
-                                             <BsThreeDots size={18} />
-                                             <Typography.Text className="text-[12px]">Other</Typography.Text>
+                                   </div>
+                                   <div className="summarize-info-right flex flex-col justify-around ">
+                                        <Typography.Text strong>Budgeting</Typography.Text>
+                                        <div className="flex flex-col">
+                                             <Typography.Text>$0.00</Typography.Text>
+                                             <Typography.Text strong className="cursor-pointer">
+                                                  View details
+                                             </Typography.Text>
                                         </div>
                                    </div>
                               </div>
-                              <div className="summarize-info-right flex flex-col justify-around ">
-                                   <Typography.Text strong>Budgeting</Typography.Text>
-                                   <div className="flex flex-col">
-                                        <Typography.Text>$0.00</Typography.Text>
-                                        <Typography.Text strong className="cursor-pointer">
-                                             View details
-                                        </Typography.Text>
-                                   </div>
-                              </div>
+                              <Notes />
+                              <Hotels />
+                              <Places />
+                              <Restaurants />
                          </div>
-                         <Notes />
-                         <Hotels />
-                         <Places />
-                         <Restaurants />
+                         {showAddPlaces ? <AddPlaces isShow={showAddPlaces} setIsShow={setShowAddPlaces} /> : null}
                     </div>
-                    {showAddPlaces ? <AddPlaces isShow={showAddPlaces} setIsShow={setShowAddPlaces} /> : null}
                </div>
                <div className="detail-map flex-1">
                     <Map

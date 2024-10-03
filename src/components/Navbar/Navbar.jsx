@@ -1,8 +1,13 @@
-import React, { useEffect } from "react";
+import React, { useEffect, useState } from "react";
 import { CgMenuGridR } from "react-icons/cg";
 import "./style.scss";
 import { IoMdClose } from "react-icons/io";
+import { ModalLogin, ModalSignup } from "./Modal";
+import { Button } from "antd";
+
 const Navbar = () => {
+     const [showModal, setShowModal] = useState(false);
+     const [showLogin, setShowLogin] = useState(false);
      useEffect(() => {
           //   const navMenu = document.getElementById("nav-menu");
      }, []);
@@ -49,21 +54,43 @@ const Navbar = () => {
                          id="nav-close"
                     ></IoMdClose>
                </div>
-
-               <div
-                    onClick={() => {
-                         const navMenu = document.getElementById("nav-menu");
-                         const navToggle = document.getElementById("nav-toggle");
-                         const navClose = document.getElementById("nav-close");
-                         if (navToggle) {
-                              navMenu.classList.add("show-menu");
-                         }
-                    }}
-                    className="nav__toggle"
-                    id="nav-toggle"
-               >
-                    <CgMenuGridR />
+               <div className="flex items-center gap-[2.5rem]">
+                    <div className="user-container flex gap-2 items-center">
+                         <Button
+                              onClick={() => {
+                                   setShowLogin(true);
+                              }}
+                              className="text-white custom-btn-text"
+                              type="text"
+                         >
+                              Log in
+                         </Button>
+                         <Button
+                              onClick={() => {
+                                   setShowModal(true);
+                              }}
+                              className="custom-btn-orange"
+                         >
+                              Sign up
+                         </Button>
+                    </div>
+                    <div
+                         onClick={() => {
+                              const navMenu = document.getElementById("nav-menu");
+                              const navToggle = document.getElementById("nav-toggle");
+                              const navClose = document.getElementById("nav-close");
+                              if (navToggle) {
+                                   navMenu.classList.add("show-menu");
+                              }
+                         }}
+                         className="nav__toggle"
+                         id="nav-toggle"
+                    >
+                         <CgMenuGridR />
+                    </div>
                </div>
+               {showModal && <ModalSignup isShow={showModal} setIsShow={setShowModal} />}
+               {showLogin && <ModalLogin isShow={showLogin} setIsShow={setShowLogin} />}
           </nav>
      );
 };

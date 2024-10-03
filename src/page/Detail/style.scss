@@ -31,10 +31,12 @@
           }
      }
      .summarize-container {
-          margin: auto 40px;
+          margin: auto 30px;
           display: flex;
           flex-direction: column;
           gap: 12px;
+          // max-height: calc(100vh - 340px);
+          // overflow: scroll;
           .summarize-info {
                // padding: 0px 36px;
                display: flex;

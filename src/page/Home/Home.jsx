@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from "react";
+import React, { useState, useEffect, useRef } from "react";
 import home from "../../assets/images/home1.jpg";
 import home2 from "../../assets/images/home2.jpg";
 import { Button, Input } from "antd";
@@ -24,6 +24,7 @@ import { EffectCoverflow, Pagination } from "swiper/modules";
 import SearchBar from "../../components/Custom/SearchBar";
 const Home = () => {
      const [isPlay, setIsPlay] = useState(false);
+     const testRef = useRef(null);
      const triggerVideo = () => {
           const videoFile = document.getElementById("video-file");
           console.log("fivideoFilerst", videoFile);
@@ -38,7 +39,7 @@ const Home = () => {
      return (
           <div className="graduation__home">
                Home
-               <section className="home" id="home">
+               <section className="home" id="home" ref={testRef}>
                     <img src={home} alt="home1" className="home__img" />
                     <div className="home__container graduation__container graduation__grid">
                          <div className="home__data">
@@ -71,303 +72,313 @@ const Home = () => {
                </section>
                <SearchBar />
                {/* ================================= ABOUT =============================== */}
-               <section className="about section" id="about">
-                    <div
-                         className="about__container 
+               <div className="flex flex-col justify-center items-center">
+                    <section className="about section" id="about">
+                         <div
+                              className="about__container 
                     graduation__grid
                     graduation__container"
-                    >
-                         <div className="about__data">
-                              <h2 className="section__title about__title">
-                                   More Information <br /> About The Best Beaches
-                              </h2>
-                              <p className="about__description">
-                                   You can find the most beautiful and pleasant places at the best prices with special discounts, you choose
-                                   the place we will guide you all the way to wait, get your place now.
-                              </p>
-                              <button className="home__button">Revese a place</button>
-                         </div>
-                         <div className="about__img">
-                              <div className="about__img-overlay">
-                                   <img className="about__img-one" src={about1} alt="about1" />
+                         >
+                              <div className="about__data">
+                                   <h2 className="section__title about__title">
+                                        More Information <br /> About The Best Beaches
+                                   </h2>
+                                   <p className="about__description">
+                                        You can find the most beautiful and pleasant places at the best prices with special discounts, you
+                                        choose the place we will guide you all the way to wait, get your place now.
+                                   </p>
+                                   <button className="home__button">Revese a place</button>
                               </div>
-                              <div className="about__img-overlay">
-                                   <img className="about__img-two" src={about2} alt="about2" />
+                              <div className="about__img">
+                                   <div className="about__img-overlay">
+                                        <img className="about__img-one" src={about1} alt="about1" />
+                                   </div>
+                                   <div className="about__img-overlay">
+                                        <img className="about__img-two" src={about2} alt="about2" />
+                                   </div>
                               </div>
                          </div>
-                    </div>
-               </section>
-               {/* ================================== DISCOVER =============== */}
-               <section className="discover section" id="discover">
-                    <h2 className="section__title">
-                         Discover the most <br /> attractive places
-                    </h2>
-                    <div className="discover__container graduation__container">
-                         <div>
-                              <Swiper
-                                   effect={"coverflow"}
-                                   grabCursor={true}
-                                   centeredSlides={true}
-                                   slidesPerView={"3"}
-                                   loop={true}
-                                   spaceBetween={32}
-                                   coverflowEffect={{
-                                        rotate: 0,
-                                        // stretch: 0,
-                                        // depth: 100,
-                                        // modifier: 1,
-                                        // slideShadows: false,
-                                   }}
-                                   // pagination={true}
-                                   modules={[EffectCoverflow, Pagination]}
-                                   // className="mySwiper"
-                              >
-                                   <SwiperSlide>
-                                        <div className="discover__card">
-                                             <img className="discover__img" src={discover1} alt="discover1" />
-                                             <div className="discover__data">
-                                                  <h2 className="discover__title"> Bali</h2>
-                                                  <span className="discover__description">24 tours available</span>
+                    </section>
+                    {/* ================================== DISCOVER =============== */}
+                    <section className="discover section" id="discover">
+                         <h2 className="section__title">
+                              Discover the most <br /> attractive places
+                         </h2>
+                         <div className="discover__container graduation__container">
+                              <div>
+                                   <Swiper
+                                        effect={"coverflow"}
+                                        grabCursor={true}
+                                        centeredSlides={true}
+                                        slidesPerView={"3"}
+                                        loop={true}
+                                        spaceBetween={32}
+                                        coverflowEffect={{
+                                             rotate: 0,
+                                             // stretch: 0,
+                                             // depth: 100,
+                                             // modifier: 1,
+                                             // slideShadows: false,
+                                        }}
+                                        // pagination={true}
+                                        modules={[EffectCoverflow, Pagination]}
+                                        // className="mySwiper"
+                                   >
+                                        <SwiperSlide>
+                                             <div className="discover__card">
+                                                  <img className="discover__img" src={discover1} alt="discover1" />
+                                                  <div className="discover__data">
+                                                       <h2 className="discover__title"> Bali</h2>
+                                                       <span className="discover__description">24 tours available</span>
+                                                  </div>
                                              </div>
-                                        </div>
-                                   </SwiperSlide>
-                                   <SwiperSlide>
-                                        <div className="discover__card">
-                                             <img className="discover__img" src={discover2} alt="discover1" />
-                                             <div className="discover__data">
-                                                  <h2 className="discover__title"> Bali</h2>
-                                                  <span className="discover__description">24 tours available</span>
+                                        </SwiperSlide>
+                                        <SwiperSlide>
+                                             <div className="discover__card">
+                                                  <img className="discover__img" src={discover2} alt="discover1" />
+                                                  <div className="discover__data">
+                                                       <h2 className="discover__title"> Bali</h2>
+                                                       <span className="discover__description">24 tours available</span>
+                                                  </div>
                                              </div>
-                                        </div>
-                                   </SwiperSlide>
-                                   <SwiperSlide>
-                                        <div className="discover__card">
-                                             <img className="discover__img" src={discover3} alt="discover1" />
-                                             <div className="discover__data">
-                                                  <h2 className="discover__title"> Bali</h2>
-                                                  <span className="discover__description">24 tours available</span>
+                                        </SwiperSlide>
+                                        <SwiperSlide>
+                                             <div className="discover__card">
+                                                  <img className="discover__img" src={discover3} alt="discover1" />
+                                                  <div className="discover__data">
+                                                       <h2 className="discover__title"> Bali</h2>
+                                                       <span className="discover__description">24 tours available</span>
+                                                  </div>
                                              </div>
-                                        </div>
-                                   </SwiperSlide>
-                                   <SwiperSlide>
-                                        <div className="discover__card">
-                                             <img className="discover__img" src={discover4} alt="discover1" />
-                                             <div className="discover__data">
-                                                  <h2 className="discover__title"> Bali</h2>
-                                                  <span className="discover__description">24 tours available</span>
+                                        </SwiperSlide>
+                                        <SwiperSlide>
+                                             <div className="discover__card">
+                                                  <img className="discover__img" src={discover4} alt="discover1" />
+                                                  <div className="discover__data">
+                                                       <h2 className="discover__title"> Bali</h2>
+                                                       <span className="discover__description">24 tours available</span>
+                                                  </div>
                                              </div>
-                                        </div>
-                                   </SwiperSlide>
-                              </Swiper>
+                                        </SwiperSlide>
+                                   </Swiper>
 
-                              {/* <div className="discover__card">
+                                   {/* <div className="discover__card">
                                    <img className="discover__img" src={discover1} alt="discover1" />
                                    <div className="discover__data">
                                         <h2 className="discover__title"> Bali</h2>
                                         <span className="discover__description">24 tours available</span>
                                    </div>
                               </div> */}
-                              {/* =========== 2 ======== */}
-                              {/* <div className="discover__card">
+                                   {/* =========== 2 ======== */}
+                                   {/* <div className="discover__card">
                                    <img className="discover__img" src={discover2} alt="discover2" />
                                    <div className="discover__data">
                                         <h2 className="discover__title"> Bali</h2>
                                         <span className="discover__description">24 tours available</span>
                                    </div>
                               </div> */}
-                              {/* =========== 3 ======== */}
+                                   {/* =========== 3 ======== */}
 
-                              {/* <div className="discover__card">
+                                   {/* <div className="discover__card">
                                    <img className="discover__img" src={discover3} alt="discover1" />
                                    <div className="discover__data">
                                         <h2 className="discover__title"> Bali</h2>
                                         <span className="discover__description">24 tours available</span>
                                    </div>
                               </div> */}
-                              {/* =========== 4 ======== */}
+                                   {/* =========== 4 ======== */}
 
-                              {/* <div className="discover__card">
+                                   {/* <div className="discover__card">
                                    <img className="discover__img" src={discover4} alt="discover1" />
                                    <div className="discover__data">
                                         <h2 className="discover__title"> Bali</h2>
                                         <span className="discover__description">24 tours available</span>
                                    </div>
                               </div> */}
-                         </div>
-                    </div>
-               </section>
-               {/* ================================= EXPERIENCE =============================== */}
-               <section className="experience section">
-                    <h2 className="section__title">
-                         With Our Experience <br /> We Will Serve You
-                    </h2>
-                    <div className="experience__container graduation__container graduation__grid">
-                         <div className="experience__content graduation__grid">
-                              <div className="experience__data">
-                                   <h2 className="experience__number">20</h2>
-                                   <span className="experience__description">
-                                        Year <br /> Experience
-                                   </span>
                               </div>
+                         </div>
+                    </section>
+                    {/* ================================= EXPERIENCE =============================== */}
+                    <section className="experience section">
+                         <h2 className="section__title">
+                              With Our Experience <br /> We Will Serve You
+                         </h2>
+                         <div className="experience__container graduation__container graduation__grid">
+                              <div className="experience__content graduation__grid">
+                                   <div className="experience__data">
+                                        <h2 className="experience__number">20</h2>
+                                        <span className="experience__description">
+                                             Year <br /> Experience
+                                        </span>
+                                   </div>
 
-                              <div className="experience__data">
-                                   <h2 className="experience__number">60</h2>
-                                   <span className="experience__description">
-                                        Complete <br /> tours
-                                   </span>
-                              </div>
+                                   <div className="experience__data">
+                                        <h2 className="experience__number">60</h2>
+                                        <span className="experience__description">
+                                             Complete <br /> tours
+                                        </span>
+                                   </div>
 
-                              <div className="experience__data">
-                                   <h2 className="experience__number">200+</h2>
-                                   <span className="experience__description">
-                                        Tourist <br /> Destination
-                                   </span>
-                              </div>
-                         </div>
-                         <div className="experience__img graduation__grid">
-                              <div className="experience__overlay">
-                                   <img src={experience1} alt="experience1" className="experience__img-one" />
-                              </div>
-                              <div className="experience__overlay">
-                                   <img src={experience2} alt="experience2" className="experience__img-two" />
-                              </div>
-                         </div>
-                    </div>
-               </section>
-               {/* ================================= VIDEO =============================== */}
-               <section className="video section">
-                    <h2 className="section__title">Video Tour</h2>
-                    <div className="video__container graduation__container">
-                         <p className="video__description">
-                              Find out more with our video of the most beautiful and pleasant places for you and your family.
-                         </p>
-                         <div className="video__content">
-                              <video
-                                   id="video-file"
-                                   onEnded={(e) => {
-                                        console.log("end", e);
-                                        setIsPlay(false);
-                                   }}
-                              >
-                                   <source src={video} type="video/mp4"></source>
-                              </video>
-                              <button onClick={triggerVideo} className="home__button video__button" id="video-button">
-                                   {!isPlay ? <FaPlay className="video__button-icon" /> : <FaPause className="video__button-icon" />}
-                              </button>
-                         </div>
-                    </div>
-               </section>
-               {/* ================================= PLACES =============================== */}
-               <section className="place section" id="place">
-                    <h2 className="section__title">Choose Your Place</h2>
-                    <div className="place__container graduation__container graduation__grid">
-                         <div className="place__card">
-                              <img src={place1} alt="place1" className="place__img" />
-                              <div className="place__content">
-                                   <span className="place__rating">
-                                        <FaRegStar className="place__rating-icon" />
-                                        <span className="place__rating-number">4.9</span>
-                                   </span>
-                                   <div className="place__data">
-                                        <h3 className="place__title">Nha Trang</h3>
-                                        <span className="place__subtitle">Việt Nam</span>
-                                        <span className="place__price">$200</span>
+                                   <div className="experience__data">
+                                        <h2 className="experience__number">200+</h2>
+                                        <span className="experience__description">
+                                             Tourist <br /> Destination
+                                        </span>
                                    </div>
                               </div>
-                              <button className="home__button place__button">
-                                   <FaArrowRight />
-                              </button>
-                         </div>
-                         {/* =============================================================== */}
-                         <div className="place__card">
-                              <img src={place1} alt="place1" className="place__img" />
-                              <div className="place__content">
-                                   <span className="place__rating">
-                                        <FaRegStar className="place__rating-icon" />
-                                        <span className="place__rating-number">4.9</span>
-                                   </span>
-                                   <div className="place__data">
-                                        <h3 className="place__title">Nha Trang</h3>
-                                        <span className="place__subtitle">Việt Nam</span>
-                                        <span className="place__price">$200</span>
+                              <div className="experience__img graduation__grid">
+                                   <div className="experience__overlay">
+                                        <img src={experience1} alt="experience1" className="experience__img-one" />
+                                   </div>
+                                   <div className="experience__overlay">
+                                        <img src={experience2} alt="experience2" className="experience__img-two" />
                                    </div>
                               </div>
-                              <button className="home__button place__button">
-                                   <FaArrowRight />
-                              </button>
                          </div>
-                         {/* =============================================================== */}
-                         <div className="place__card">
-                              <img src={place1} alt="place1" className="place__img" />
-                              <div className="place__content">
-                                   <span className="place__rating">
-                                        <FaRegStar className="place__rating-icon" />
-                                        <span className="place__rating-number">4.9</span>
-                                   </span>
-                                   <div className="place__data">
-                                        <h3 className="place__title">Nha Trang</h3>
-                                        <span className="place__subtitle">Việt Nam</span>
-                                        <span className="place__price">$200</span>
+                    </section>
+                    {/* ================================= VIDEO =============================== */}
+                    <section className="video section">
+                         <h2 className="section__title">Video Tour</h2>
+                         <div className="video__container graduation__container">
+                              <p className="video__description">
+                                   Find out more with our video of the most beautiful and pleasant places for you and your family.
+                              </p>
+                              <div className="video__content">
+                                   <video
+                                        id="video-file"
+                                        onEnded={(e) => {
+                                             console.log("end", e);
+                                             setIsPlay(false);
+                                        }}
+                                   >
+                                        <source src={video} type="video/mp4"></source>
+                                   </video>
+                                   <button onClick={triggerVideo} className="home__button video__button" id="video-button">
+                                        {!isPlay ? <FaPlay className="video__button-icon" /> : <FaPause className="video__button-icon" />}
+                                   </button>
+                              </div>
+                         </div>
+                    </section>
+                    {/* ================================= PLACES =============================== */}
+                    <section className="place section" id="place">
+                         <h2 className="section__title">Choose Your Place</h2>
+                         <div className="place__container graduation__container graduation__grid">
+                              <div className="place__card">
+                                   <img src={place1} alt="place1" className="place__img" />
+                                   <div className="place__content">
+                                        <span className="place__rating">
+                                             <FaRegStar className="place__rating-icon" />
+                                             <span className="place__rating-number">4.9</span>
+                                        </span>
+                                        <div className="place__data">
+                                             <h3 className="place__title">Nha Trang</h3>
+                                             <span className="place__subtitle">Việt Nam</span>
+                                             <span className="place__price">$200</span>
+                                        </div>
+                                   </div>
+                                   <button className="home__button place__button">
+                                        <FaArrowRight />
+                                   </button>
+                              </div>
+                              {/* =============================================================== */}
+                              <div className="place__card">
+                                   <img src={place1} alt="place1" className="place__img" />
+                                   <div className="place__content">
+                                        <span className="place__rating">
+                                             <FaRegStar className="place__rating-icon" />
+                                             <span className="place__rating-number">4.9</span>
+                                        </span>
+                                        <div className="place__data">
+                                             <h3 className="place__title">Nha Trang</h3>
+                                             <span className="place__subtitle">Việt Nam</span>
+                                             <span className="place__price">$200</span>
+                                        </div>
+                                   </div>
+                                   <button className="home__button place__button">
+                                        <FaArrowRight />
+                                   </button>
+                              </div>
+                              {/* =============================================================== */}
+                              <div className="place__card">
+                                   <img src={place1} alt="place1" className="place__img" />
+                                   <div className="place__content">
+                                        <span className="place__rating">
+                                             <FaRegStar className="place__rating-icon" />
+                                             <span className="place__rating-number">4.9</span>
+                                        </span>
+                                        <div className="place__data">
+                                             <h3 className="place__title">Nha Trang</h3>
+                                             <span className="place__subtitle">Việt Nam</span>
+                                             <span className="place__price">$200</span>
+                                        </div>
+                                   </div>
+                                   <button className="home__button place__button">
+                                        <FaArrowRight />
+                                   </button>
+                              </div>
+                              {/* =============================================================== */}
+                              <div className="place__card">
+                                   <img src={place1} alt="place1" className="place__img" />
+                                   <div className="place__content">
+                                        <span className="place__rating">
+                                             <FaRegStar className="place__rating-icon" />
+                                             <span className="place__rating-number">4.9</span>
+                                        </span>
+                                        <div className="place__data">
+                                             <h3 className="place__title">Nha Trang</h3>
+                                             <span className="place__subtitle">Việt Nam</span>
+                                             <span className="place__price">$200</span>
+                                        </div>
+                                   </div>
+                                   <button className="home__button place__button">
+                                        <FaArrowRight />
+                                   </button>
+                              </div>
+                              {/* =============================================================== */}
+                              <div className="place__card">
+                                   <img src={place1} alt="place1" className="place__img" />
+                                   <div className="place__content">
+                                        <span className="place__rating">
+                                             <FaRegStar className="place__rating-icon" />
+                                             <span className="place__rating-number">4.9</span>
+                                        </span>
+                                        <div className="place__data">
+                                             <h3 className="place__title">Nha Trang</h3>
+                                             <span className="place__subtitle">Việt Nam</span>
+                                             <span className="place__price">$200</span>
+                                        </div>
+                                   </div>
+                                   <button className="home__button place__button">
+                                        <FaArrowRight />
+                                   </button>
+                              </div>
+                              {/* =============================================================== */}
+                         </div>
+                    </section>
+                    <section className="subscribe secion w-full ">
+                         <div className="subscribe__bg w-full flex items-center justify-center">
+                              <div className="subscribe__container graduation__container">
+                                   <h2 className="section__title subscribe__title">
+                                        Subscribe Our <br /> Newsletter
+                                   </h2>
+                                   <p className="subscribe__description">Subscribe to our newsletter and get a special 30% discount.</p>
+                                   <div className="subscribe__form">
+                                        <Input placeholder="Enter email" className="subscribe__input" />
+                                        <button className="home__button">Subscribe</button>
                                    </div>
                               </div>
-                              <button className="home__button place__button">
-                                   <FaArrowRight />
-                              </button>
                          </div>
-                         {/* =============================================================== */}
-                         <div className="place__card">
-                              <img src={place1} alt="place1" className="place__img" />
-                              <div className="place__content">
-                                   <span className="place__rating">
-                                        <FaRegStar className="place__rating-icon" />
-                                        <span className="place__rating-number">4.9</span>
-                                   </span>
-                                   <div className="place__data">
-                                        <h3 className="place__title">Nha Trang</h3>
-                                        <span className="place__subtitle">Việt Nam</span>
-                                        <span className="place__price">$200</span>
-                                   </div>
-                              </div>
-                              <button className="home__button place__button">
-                                   <FaArrowRight />
-                              </button>
-                         </div>
-                         {/* =============================================================== */}
-                         <div className="place__card">
-                              <img src={place1} alt="place1" className="place__img" />
-                              <div className="place__content">
-                                   <span className="place__rating">
-                                        <FaRegStar className="place__rating-icon" />
-                                        <span className="place__rating-number">4.9</span>
-                                   </span>
-                                   <div className="place__data">
-                                        <h3 className="place__title">Nha Trang</h3>
-                                        <span className="place__subtitle">Việt Nam</span>
-                                        <span className="place__price">$200</span>
-                                   </div>
-                              </div>
-                              <button className="home__button place__button">
-                                   <FaArrowRight />
-                              </button>
-                         </div>
-                         {/* =============================================================== */}
-                    </div>
-               </section>
-               <section className="subscribe secion">
-                    <div className="subscribe__bg">
-                         <div className="subscribe__container graduation__container">
-                              <h2 className="section__title subscribe__title">
-                                   Subscribe Our <br /> Newsletter
-                              </h2>
-                              <p className="subscribe__description">Subscribe to our newsletter and get a special 30% discount.</p>
-                              <div className="subscribe__form">
-                                   <Input placeholder="Enter email" className="subscribe__input" />
-                                   <button className="home__button">Subscribe</button>
-                              </div>
-                         </div>
-                    </div>
-               </section>
-               <button className="home__button scrollup">
+                    </section>
+               </div>
+               <button
+                    className="home__button scrollup"
+                    onClick={() => {
+                         testRef.current.scrollIntoView({
+                              behavior: "smooth",
+                              block: "start",
+                         });
+                    }}
+               >
                     <FaArrowUp />
                </button>
           </div>

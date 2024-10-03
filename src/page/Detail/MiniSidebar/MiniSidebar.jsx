@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from "react";
+import React, { useEffect, useState, useRef, forwardRef, useImperativeHandle } from "react";
 import { FaHome, FaSearch, FaAngleDoubleLeft, FaAngleDoubleRight } from "react-icons/fa";
 import logo from "../../../assets/images/logo.png";
 import { Input, Typography } from "antd";
@@ -39,7 +39,7 @@ const MiniSidebar = () => {
           }
           setListItems(newOptions);
      }, [data]);
-     console.log("listItems", listItems);
+     console.log("listItems", listItems, data);
      return (
           <nav className={`sidebar ${!expand ? "close" : ""}`}>
                <header>
