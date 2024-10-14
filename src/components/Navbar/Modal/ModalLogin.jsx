@@ -85,13 +85,13 @@ const ModalLogin = ({ isShow, setIsShow }) => {
                               className=""
                          >
                               <FormItem control={control} className="font-bold mb-[6px] " name="username">
-                                   <Input placeholder="Email" allowClear className=" min-w-[300px] shadow-sm min-h-[56px] custom-input" />
+                                   <Input placeholder="Email" allowClear className=" min-w-[300px] shadow-sm min-h-[40px] custom-input" />
                               </FormItem>
                               <FormItem className="font-bold" control={control} name="password">
                                    <Input.Password
                                         placeholder="Password"
                                         allowClear
-                                        className="w-full shadow-sm min-h-[56px] custom-input"
+                                        className="w-full shadow-sm min-h-[40px] custom-input"
                                    />
                               </FormItem>
                          </Form>
@@ -121,7 +121,7 @@ const ModalLogin = ({ isShow, setIsShow }) => {
                          <Typography.Text className="text-[1.5rem] text-center font-bold">
                               Sign up to take your trip planning to the next level
                          </Typography.Text>
-                         <div className="flex flex-col gap-[6px]">
+                         {/* <div className="flex flex-col gap-[6px]">
                               <Button
                                    className="min-w-[300px] !bg-[#3f52e3]  h-[56px] font-bold text-[1rem] rounded-[100px]"
                                    type="primary"
@@ -129,10 +129,10 @@ const ModalLogin = ({ isShow, setIsShow }) => {
                                    Sign up with Facebook
                               </Button>
                               <Button className="min-w-[300px] h-[56px] font-bold text-[1rem] rounded-[100px]">Sign up with Google</Button>
-                         </div>
+                         </div> */}
                          <div className="flex items-center gap-2">
                               <div className="flex-1 w-[300px] h-[1px] bg-gray-400"></div>
-                              <div>or</div>
+                              <div>Sign Up</div>
                               <div className="flex-1 h-[1px] bg-slate-400"></div>
                          </div>
                          <Form
@@ -148,14 +148,14 @@ const ModalLogin = ({ isShow, setIsShow }) => {
                                         <Input
                                              placeholder="First name"
                                              allowClear
-                                             className=" min-w-[100px] shadow-sm min-h-[56px] custom-input"
+                                             className=" min-w-[100px] shadow-sm min-h-[40px] custom-input"
                                         />
                                    </FormItem>
                                    <FormItem control={control} className="font-bold flex-1 mb-[6px] " name="lastname">
                                         <Input
                                              placeholder="Last name"
                                              allowClear
-                                             className=" min-w-[100px] shadow-sm min-h-[56px] custom-input"
+                                             className=" min-w-[100px] shadow-sm min-h-[40px] custom-input"
                                         />
                                    </FormItem>
                               </div>
@@ -163,25 +163,25 @@ const ModalLogin = ({ isShow, setIsShow }) => {
                                    <Input
                                         placeholder="Username"
                                         allowClear
-                                        className=" min-w-[300px] shadow-sm min-h-[56px] custom-input"
+                                        className=" min-w-[300px] shadow-sm min-h-[40px] custom-input"
                                    />
                               </FormItem>
                               <FormItem control={control} className="font-bold mb-[6px] " name="email">
-                                   <Input placeholder="Email" allowClear className=" min-w-[300px] shadow-sm min-h-[56px] custom-input" />
+                                   <Input placeholder="Email" allowClear className=" min-w-[300px] shadow-sm min-h-[40px] custom-input" />
                               </FormItem>
 
                               <FormItem className="font-bold mb-[6px]" control={control} name="password">
                                    <Input.Password
                                         placeholder="Password"
                                         allowClear
-                                        className="w-full shadow-sm min-h-[56px] custom-input"
+                                        className="w-full shadow-sm min-h-[40px] custom-input"
                                    />
                               </FormItem>
                               <FormItem className="font-bold" control={control} name="confirmpassword">
                                    <Input.Password
                                         placeholder="Confirm Password"
                                         allowClear
-                                        className="w-full shadow-sm min-h-[56px] custom-input"
+                                        className="w-full shadow-sm min-h-[40px] custom-input"
                                    />
                               </FormItem>
                          </Form>

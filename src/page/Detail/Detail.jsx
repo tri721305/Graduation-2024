@@ -19,6 +19,16 @@ import { detailActions } from "./detailSlice";
 import avt from "../../assets/images/avt.png";
 import AddPlaces from "../../components/AddPlaces/AddPlaces";
 import moment from "moment";
+import { MdEdit } from "react-icons/md";
+import RecommendCard from "./CustomCard/RecommendCard";
+import hcm3 from "../../assets/images/hcm3.jpg";
+import { Swiper, SwiperSlide } from "swiper/react";
+import { Pagination, Navigation } from "swiper/modules";
+import "swiper/css";
+import "swiper/css/pagination";
+import "swiper/css/navigation";
+
+import "./style.scss";
 
 const Detail = () => {
      const dispatch = useDispatch();
@@ -42,10 +52,8 @@ const Detail = () => {
                date: item,
                data: [],
           }));
-          console.log("days", newFormat);
           dispatch(detailActions.setDate(newFormat));
      };
-     console.log("days", data);
      return (
           <div className="detail-trip">
                <div className="detail-trip-leftmenu min-w-[50px]">
@@ -55,7 +63,12 @@ const Detail = () => {
                     <div className="h-[280px] relative bg-[#f3f4f5]">
                          <div className="background-image-container">
                               <img alt="image" src={saigon} />
-                              <Button>Edit</Button>
+                              <Button
+                                   className="flex absolute top-[30px] right-[30px] justify-center items-center rounded-[50%]"
+                                   icon={<MdEdit />}
+                              >
+                                   {/* <MdEdit /> */}
+                              </Button>
                          </div>
                          <div className="sub-content-container">
                               <Typography.Text strong className="text-[24px]">
@@ -77,17 +90,66 @@ const Detail = () => {
                          </div>
                     </div>
                     <div className="pb-5 mb-3 bg-[#f3f4f5]">
-                         <div className="flex justify-around">
+                         <div className="flex p-[20px] justify-around">
                               <Typography.Text string> Explore</Typography.Text>
                               <Button
                                    onClick={() => {
                                         setShowAddPlaces(true);
                                    }}
                                    type="primary"
-                                   className="rounded-[16px] flex gap-2 items-center"
+                                   className="rounded-[16px] custom-btn-orange flex gap-2 items-center"
                               >
                                    <CiSearch /> Add place
                               </Button>
+                         </div>
+                         <div className="px-[80px] custom-swiper flex ">
+                              <Swiper
+                                   pagination={{
+                                        type: "fraction",
+                                   }}
+                                   slidesPerView={"3"}
+                                   navigation={true}
+                                   modules={[Navigation]}
+                                   className="mySwiper"
+                              >
+                                   <SwiperSlide>
+                                        <RecommendCard
+                                             image={hcm3}
+                                             title="Best restaurants in Central Hồ Chí Minh city."
+                                             description="Most often-seen on the web"
+                                             userName="Minh Trí"
+                                             userImage={avt}
+                                        />
+                                   </SwiperSlide>
+
+                                   <SwiperSlide>
+                                        <RecommendCard
+                                             image={hcm3}
+                                             title="Best restaurants in Central Hồ Chí Minh city."
+                                             description="Most often-seen on the web"
+                                             userName="Minh Trí"
+                                             userImage={avt}
+                                        />
+                                   </SwiperSlide>
+                                   <SwiperSlide>
+                                        <RecommendCard
+                                             image={hcm3}
+                                             title="Best restaurants in Central Hồ Chí Minh city."
+                                             description="Most often-seen on the web"
+                                             userName="Minh Trí"
+                                             userImage={avt}
+                                        />
+                                   </SwiperSlide>
+                                   <SwiperSlide>
+                                        <RecommendCard
+                                             image={hcm3}
+                                             title="Best restaurants in Central Hồ Chí Minh city."
+                                             description="Most often-seen on the web"
+                                             userName="Minh Trí"
+                                             userImage={avt}
+                                        />
+                                   </SwiperSlide>
+                              </Swiper>
                          </div>
                     </div>
                     <div className="">

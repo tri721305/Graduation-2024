@@ -105,3 +105,33 @@
           color: rgba(255, 0, 0, 0.611);
      }
 }
+.custom-swiper {
+     .swiper-button-next {
+          right: var(--swiper-navigation-sides-offset, 0px) !important;
+          &::after {
+               width: 24px !important;
+               height: 24px !important;
+               border-radius: 50% !important;
+               display: flex !important;
+               justify-content: center !important;
+               align-items: center !important;
+               font-size: 12px !important;
+               background: #fff;
+               padding: 3px;
+          }
+     }
+     .swiper-button-prev {
+          left: var(--swiper-navigation-sides-offset, -1px);
+          &::after {
+               width: 24px !important;
+               height: 24px !important;
+               border-radius: 50% !important;
+               display: flex !important;
+               justify-content: center !important;
+               align-items: center !important;
+               font-size: 12px !important;
+               background: #fff;
+               padding: 3px;
+          }
+     }
+}

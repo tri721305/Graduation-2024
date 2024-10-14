@@ -13,6 +13,7 @@ const ModalLodging = ({ isShow, setIsShow }) => {
                onCancel={() => {
                     setIsShow(false);
                }}
+               width={400}
           >
                <div className="p-[1rem]">
                     <div className="flex flex-col items-center gap-[1.5rem]">

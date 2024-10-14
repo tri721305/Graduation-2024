@@ -6,10 +6,12 @@ import { MdLocalHotel } from "react-icons/md";
 import Spacer from "../../../components/Spacer/Spacer";
 import { useDispatch, useSelector } from "react-redux";
 import ModalLodging from "./ModalLodging/ModalLodging";
+import ModalBook from "./ModalLodging/ModalBook";
 import "./style.scss";
 const Hotels = () => {
      const dispatch = useDispatch();
      const [showLodging, setShowLodging] = useState(false);
+     const [showBooking, setShowBooking] = useState(false);
      return (
           <div className="hotels-container">
                <div className="flex gap-1 items-center mb-2">
@@ -48,7 +50,7 @@ const Hotels = () => {
                          </div>
                     </div>
                </div>
-               <div className="flex justify-around items-center">
+               <div className="flex justify-around p-2 items-center">
                     <Button
                          onClick={() => {
                               setShowLodging(true);
@@ -58,12 +60,18 @@ const Hotels = () => {
                     >
                          <FaPlus /> <span className="text-[12px] font-semibold "> Add another lodging</span>
                     </Button>
-                    <Button type="text" className=" flex items-center gap-2">
+                    <Button
+                         onClick={() => {
+                              setShowBooking(true);
+                         }}
+                         type="text"
+                         className=" flex items-center gap-2"
+                    >
                          <MdLocalHotel /> <span className="text-[12px] font-semibold "> Find hotels</span>
                     </Button>
                </div>
                <Spacer />
-
+               {showBooking ? <ModalBook isShow={showBooking} setIsShow={setShowBooking} /> : null}
                {showLodging ? <ModalLodging isShow={showLodging} setIsShow={setShowLodging} /> : null}
           </div>
      );
