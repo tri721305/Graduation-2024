@@ -9,7 +9,7 @@
      /* Change favorite color to match images */
      /*Green dark 190 - Green 171 - Grren Blue 200*/
      --hue-color: 190;
-
+     --text-detail-color: #6c757d;
      /* HSL color mode */
      --first-color: hsl(var(--hue-color), 64%, 22%);
      --first-color-second: hsl(var(--hue-color), 64%, 22%);
@@ -107,7 +107,7 @@ body {
 // }
 
 .App {
-     font-family: "Raleway", sans-serif;
+     // font-family: "Raleway", sans-serif;
      height: 100vh;
      width: 100vw;
      .graduation-modal-container {
