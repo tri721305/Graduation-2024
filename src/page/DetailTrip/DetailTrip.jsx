@@ -75,6 +75,7 @@ const DetailTrip = () => {
                                                   </div>
                                                   {convenience.listPlaces.map((place, index) => (
                                                        <Card
+                                                            number={index + 1}
                                                             title={place.name}
                                                             description={place.description}
                                                             tags={place.tags}

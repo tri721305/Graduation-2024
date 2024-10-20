@@ -24,7 +24,7 @@ const Card = (props) => {
                <div className="card-detail-trip-header flex">
                     <div className="custom-location-icon">
                          <FaMapMarker size={30} className="marker" />
-                         <Typography.Text className="marker-number">1</Typography.Text>
+                         <Typography.Text className="marker-number">{props.number}</Typography.Text>
                     </div>
                     <div className="flex  items-center justify-between mb-[8px] flex-1">
                          <Typography.Text className="text-[1.125rem] leading-5" strong>
