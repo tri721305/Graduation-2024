@@ -1,0 +1,20 @@
+.food-card-container {
+     transition: 0.3s all;
+     cursor: pointer;
+     border-bottom: 2px solid #dee2e6;
+     &:hover {
+          background: rgb(242, 242, 242);
+          border-radius: 12px;
+     }
+}
+.active-card-maps {
+     position: absolute;
+     bottom: 32px;
+     right: calc(16px + 5%);
+     z-index: 30;
+     padding: 16px;
+     width: 40%;
+     background: #fff;
+     border-radius: 12px;
+     overflow: hidden;
+}

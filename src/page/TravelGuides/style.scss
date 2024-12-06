@@ -1,0 +1,7 @@
+.guide-body {
+     max-height: calc(100vh - 50px);
+     overflow: auto;
+     &::-webkit-scrollbar {
+          display: none;
+     }
+}

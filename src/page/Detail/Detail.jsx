@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import { Typography, DatePicker, Button, Avatar, Tooltip } from "antd";
+import { Typography, DatePicker, Button, Avatar, Tooltip, Badge } from "antd";
 import { CiSearch } from "react-icons/ci";
 import Map from "react-map-gl";
 import { IoAirplane } from "react-icons/io5";
@@ -24,9 +24,6 @@ import RecommendCard from "./CustomCard/RecommendCard";
 import hcm3 from "../../assets/images/hcm3.jpg";
 import { Swiper, SwiperSlide } from "swiper/react";
 import { Pagination, Navigation } from "swiper/modules";
-import "swiper/css";
-import "swiper/css/pagination";
-import "swiper/css/navigation";
 
 import "./style.scss";
 

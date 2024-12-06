@@ -1,11 +1,12 @@
 import React from "react";
 import { Route, Routes } from "react-router-dom";
 // import PrivateRoutes from "@/router/PrivateRoutes";
-import { Login } from "@/page";
+import { Login, DetailTravelGuides, Restaurant } from "@/page";
 import { ToastContainer, toast } from "react-toastify";
 import "moment/locale/vi";
 import "react-toastify/dist/ReactToastify.css";
 import "antd/dist/antd.css";
+
 // import "antd/dist/antd.less";
 import "./App.scss";
 import "./index.css";
@@ -16,6 +17,7 @@ import Navbar from "./components/Navbar/Navbar";
 import SearchBar from "./components/Custom/SearchBar";
 import BookingHotel from "./page/BookingHotel/BookingHotel";
 import DetailTrip from "./page/DetailTrip/DetailTrip";
+
 const App = () => {
      // const scrollHeader = () => {
      //      const header = document.getElementById("nav__graduation");
@@ -39,6 +41,8 @@ const App = () => {
                          <Route element={<Home />} path="/home" />
                          <Route element={<BookingHotel />} path="/booking" />
                          <Route element={<DetailTrip />} path="/detail/:id" />
+                         <Route element={<DetailTravelGuides />} path="/guides/:id" />
+                         <Route element={<Restaurant />} path="/restaurant/:id" />
                     </Routes>
                </div>
           </div>
